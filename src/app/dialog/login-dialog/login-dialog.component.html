@@ -1,0 +1,41 @@
+<p class="modal-title text-center" id="formBankTitle" [ngStyle]="{'border-bottom':'4px solid #000', 'margin-bottom':'40px'}" [style.border-color]="getColor(bank.color)">
+  <img src="{{bank.image}}" width="68">
+  <span class="center-block">{{bank.display_name}}</span>
+</p>
+
+
+<div class="modal-inner">
+  <mat-dialog-content [formGroup]="form">
+    <div class="form-group">
+      <mat-form-field class="full-width">
+        <input matInput
+               placeholder="{{bank.user}}"
+               type="{{bank.usertype}}"
+               formControlName="user">
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width">
+        <input matInput
+               placeholder="{{bank.pass}}"
+               type="{{bank.passtype}}"
+               formControlName="pass">
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field *ngIf="bank.pass2 !== '0'" class="full-width">
+        <input matInput
+               placeholder="{{bank.pass2}}"
+               type="{{bank.passtype2}}"
+               formControlName="pass2">
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+</div>
+
+<div class="pull-right">
+  <mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-accent"(click)="save()">Login</button>
+  </mat-dialog-actions>
+</div>

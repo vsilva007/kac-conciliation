@@ -1,0 +1,7 @@
+{
+  "/serviceV3\\?servicekey=1234\\?service=bankia\\?user=victor\\?pass=1234\\?startdate=:startdate": "/serviceV3/",
+  "/serviceV3/*": "/$1",
+  "/:resource/:id/show": "/:resource/:id",
+  "/posts/:category": "/posts?category=:category",
+  "/articles\\?id=:id": "/posts/:id"
+}

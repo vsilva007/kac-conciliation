@@ -1,0 +1,15 @@
+{
+  "serviceV3" : [
+    {"product":"BANK1234", "type": "checking", "balance": 20045.54, "countable_balance": 20045.54, "balance_value": 20045.54, "arranged_balance": 20045.54,  "balance_credit_granted": 20045.54,
+      "currency": "EUR", "description": "cuenta corriente", "transactions": [
+      {"date": "27-03-2018", "date2": "27-03-2018", "amount": 565.32, "balance": 20045.54, "description": "pago comunidad", "categoryId": 0, "transactionId": "9723872345"}
+    ]},
+    {"product":"CARD1234", "type": "card", "balance": 2045.54, "countable_balance": 2045.54, "balance_value": 2045.54, "arranged_balance": 2045.54,  "balance_credit_granted": 2045.54,
+      "currency": "EUR", "description": "cuenta corriente", "transactions": [
+      {"date": "27-03-2018", "date2": "27-03-2018", "amount": 165.32, "balance": 2045.54, "description": "compra cerveza", "categoryId": 0, "transactionId": "9729872345"}
+    ]}
+  ],
+  "error": [
+    {"message": "error", "code": 50}
+  ]
+}

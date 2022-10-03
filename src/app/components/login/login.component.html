@@ -1,0 +1,49 @@
+<div id="content" class="container">
+  <p></p>
+  <div class="row">
+    <div class="col-lg-6 col-lg-push-3 col-sm-6 col-sm-push-3">
+      <form>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="Seleccionar banco" aria-label="Number" matInput [formControl]="bankControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank.display_name" style="display: none;">
+              {{ bank.display_name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <p></p>
+  <div class="row">
+    <ng-container *ngIf="state == 'filter'">
+      <div class="col-lg-6 col-lg-push-3 col-sm-6 col-sm-push-3"  [@childStag]="filteredBanks.length">
+        <section id="bankListContainer" class="content-inner margin-top-no">
+          <div *ngFor="let bank of filteredBanks | async; trackBy:trackByBank">
+            <a id="{{bank.service}}" (click)="openDialog(bank)">
+              <div class="grow cardBank" [@zoomIn]="bank"><img src="{{bank.image}}" alt="{{bank.display_name}}">
+                <div [ngStyle]="{'border-top':'4px solid #000'}" [style.border-color]="getColor(bank.color)">{{bank.display_name}}</div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="state == 'full'">
+      <div class="col-lg-6 col-lg-push-3 col-sm-6 col-sm-push-3" [@childStag]="bankList.length">
+        <section id="bankListContainer" class="content-inner margin-top-no">
+          <div *ngFor="let bank of bankList">
+            <a id="{{bank.service}}" (click)="openDialog(bank)">
+              <div class="grow cardBank"><img src="{{bank.image}}" alt="{{bank.display_name}}">
+                <div [ngStyle]="{'border-top':'4px solid #000'}" [style.border-color]="getColor(bank.color)">{{bank.display_name}}</div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="state == 'loading'">
+      <mat-progress-spinner></mat-progress-spinner>
+    </ng-container>
+  </div>
+</div>

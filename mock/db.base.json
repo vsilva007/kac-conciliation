@@ -1,0 +1,8 @@
+{
+  "serviceV3" : [
+    {"product":"", "type": "", "balance": 0, "countable_balance": 0, "balance_value": 0, "arranged_balance": 0,  "balance_credit_granted": 0,
+      "currency": "EUR", "description": "cuenta corriente", "transactions": [
+      {"date": "27-03-2018", "date2": "27-03-2018", "amount": 565.32, "balance": 20045.54, "description": "pago comunidad", "categoryId": 0, "transactionId": "9723872345"}
+    ]}
+  ]
+}

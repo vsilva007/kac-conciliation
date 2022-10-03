@@ -1,0 +1,4 @@
+{
+  "/serviceV3\\?servicekey=1234&service=:service&user=victor&pass=1234&startdate=:startdate": "/serviceV3/",
+  "/serviceV3\\?servicekey=1234&service=:service&user=otro&pass=1234&startdate=:startdate": "/error/"
+}
